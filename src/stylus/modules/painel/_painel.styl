@@ -1,0 +1,146 @@
+#painel
+	min-width 100%
+	min-height 100vh
+	display flex
+	flex-wrap wrap
+	background-color #3B3464
+	background-image url(assets/img/bg-virus.png)
+	position relative
+
+	.micro-organismo
+		flex auto
+		background-image radial-gradient(ellipse at center, rgba(84,75,118,1) 50%, rgba(84,75,118,0) 100%)
+		display flex
+		align-items center
+		justify-content center
+
+		h1
+			position absolute
+			top 20px
+			left 20px
+			width 10vw
+
+		&>div
+			background-image url(assets/img/base-create.png)
+			background-position center
+			background-repeat no-repeat
+			background-size 100% auto
+			display flex
+			width 40vw
+			height 40vw
+			position: relative;
+
+			#base, #locomocao, #sentido,#arma, #detalhe
+				position absolute
+				top 50%
+				left 50%
+				width 85%
+				height 85%
+				transform translate(-50%, -50%)
+
+			#locomocao, #sentido, #arma, #detalhe
+				&>img
+					position absolute
+					top 0
+					left 0
+					width 100%
+					height 100%
+					opacity 0
+					z-index -1
+					transform translate(0, -10px)
+					transition 0.5s
+
+				& .select
+					display block
+					z-index 1
+					opacity 1
+					transform translate(0, 0)
+
+			#locomocao
+				z-index 1
+
+			#arma
+				z-index 2
+
+			#base
+				z-index 3
+
+			#detalhe
+				z-index 4
+
+			#sentido
+				z-index 5
+
+
+	.menu
+		width 30vw
+		background-color #BFD6E2
+		position relative
+
+		#abas ul
+			display flex
+			background-color #EDF7F9
+			border-bottom solid 2px #99ACB5
+			padding-top 20px
+			justify-content center
+
+			li
+				padding 10px 0
+				flex auto
+				margin 0 1px -2px
+				font-weight bold
+				text-align center
+				cursor pointer
+				color #464C68
+				background-image linear-gradient(to right, #F96D00, #F96D00)
+				background-size 0 4px
+				background-position center bottom
+				background-repeat no-repeat
+				transition 0.5s
+
+				&.active, &:hover
+					color black
+					background-size 100% 4px
+
+		.acoes-finais
+			position absolute
+			bottom 0
+			left 50%
+			background-color #95B3C1
+			display flex
+			align-items center
+			justify-content center
+			width 80%
+			border-radius 20px 20px 0 0
+			transform translate(-50%, 0)
+			overflow hidden
+
+			i
+				display inline-flex
+				align-items center
+				justify-content center
+				width 50px
+				height 50px
+				border-radius 50%
+				cursor pointer
+				font-size 26px
+				background-color #EDF7F9
+				margin 10px
+				line-height 0
+				transition 0.5s
+
+				&:hover
+					transform scale(1.1)
+
+				&.fa-times
+					color red
+					&:hover
+						color #EDF7F9
+						background red
+
+				&.fa-check
+					color green
+					&:hover
+						color #EDF7F9
+						background green
+

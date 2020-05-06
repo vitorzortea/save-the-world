@@ -1,0 +1,5 @@
+<ul class="list-menu">
+	<li *ngFor="let base of partes.detalhe; let i=index">
+		<img src="{{'assets/img/icon/' + base.imagem + '.png'}}" alt="{{base.nome}}" title="{{base.nome}}" (click)="mudarOrganismo(i)"/>
+	</li>
+</ul>

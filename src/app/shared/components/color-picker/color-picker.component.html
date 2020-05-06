@@ -1,0 +1,10 @@
+<ul class="color-pick">
+    <li *ngFor="let color of colors; index as index;" [ngStyle]="{'background-color': color.gradiente[5]}"
+        (click)="viewGradiente(index, color.gradiente[5])"></li>
+</ul>
+<span class="color-gradiente">
+    <ul *ngFor="let color of colors" class="color-pick color-pick-gradiente">
+        <li *ngFor="let gradiente of color.gradiente" [ngStyle]="{'background-color': gradiente}" (click)="
+        selectColor(gradiente)"></li>
+    </ul>
+</span>

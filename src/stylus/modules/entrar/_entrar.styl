@@ -1,0 +1,105 @@
+#entrar
+	display flex
+	align-items center
+	color white
+	background-image linear-gradient(to right, #11193D, #3D3364)
+
+	.main
+		flex auto
+
+		&>div
+			display table
+			margin 0 auto
+
+			h1
+				width 100%
+				max-width 450px
+				margin 0 auto 60px
+
+			p
+				text-align center
+				font-size 18px
+				max-width 450px
+				margin 0 auto 30px
+
+			span
+				display flex
+				justify-content center
+				align-items center
+
+				img
+					margin -5px -20px
+					max-width 70px
+
+				a
+					display table
+					padding 5px 40px
+					color #11193D
+					font-weight bold
+					text-transform uppercase
+					font-size 25px
+					cursor pointer
+					background-color white
+					border-radius 20px
+					position relative
+					z-index 2
+
+					&:hover
+						background-color #F96D00
+						color white
+
+	.doctor
+		position relative
+		display table
+		overflow hidden
+
+		span
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			z-index 5
+
+		&>img[alt="doctor"]
+			max-height 99.5vh
+			position relative
+			z-index 2
+
+		&>img[alt="doctor-head"]
+			position absolute
+			z-index 3
+			max-width 65%
+			top 5%
+			left 7%
+			transform rotate(0deg)
+			transform-origin 75% 75%
+			animation cabeca 2s infinite cubic-bezier(0.30, 0.30, 0.60, 0.60)
+
+		&>img[alt="doctor-arm"]
+			position absolute
+			z-index 1
+			width 40%
+			left 13%
+			bottom 18%
+			transform rotate(-7deg)
+			transform-origin 100% 0%
+			animation mao 1s infinite cubic-bezier(0.30, 0.30, 0.60, 0.60)
+
+
+@keyframes mao
+	0%
+		transform rotate(-4deg)
+	50%
+		transform rotate(4deg)
+	100%
+		transform rotate(-3.9deg)
+
+
+@keyframes cabeca
+	0%
+		transform rotate(-2deg)
+	50%
+		transform rotate(2deg)
+	100%
+		transform rotate(-1.9deg)

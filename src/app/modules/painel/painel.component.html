@@ -1,0 +1,49 @@
+<section id="painel">
+	<div class="micro-organismo">
+		<h1>
+			<img src="assets/svg/logo-1.svg" alt="Save the World" />
+		</h1>
+		<div>
+			<app-base></app-base>
+			<ng-container *ngIf="organismo.organismo.base">
+				<div id="locomocao">
+					<ng-container *ngFor="let item of partes.locomocao; let i=index">
+						<img src="{{'assets/img/piece/l-'+(i+1)+'-'+organismo.organismo.base+'.png'}}" alt={{item.nome}}>
+					</ng-container>
+				</div>
+				<div id="sentido">
+					<ng-container *ngFor="let item of partes.sentido; let i=index">
+						<img src="{{'assets/img/piece/s-'+(i+1)+'-'+organismo.organismo.base+'.png'}}" alt={{item.nome}}>
+					</ng-container>
+				</div>
+				<div id="arma">
+					<ng-container *ngFor="let item of partes.arma; let i=index">
+						<img src="{{'assets/img/piece/a-'+(i+1)+'-'+organismo.organismo.base+'.png'}}" alt={{item.nome}}>
+					</ng-container>
+				</div>
+				<div id="detalhe">
+					<ng-container *ngFor="let item of partes.detalhe; let i=index">
+						<img src="{{'assets/img/piece/d-'+(i+1)+'-'+organismo.organismo.base+'.png'}}" alt={{item.nome}}>
+					</ng-container>
+				</div>
+			</ng-container>
+		</div>
+	</div>
+	<div class="menu">
+		<nav id="abas">
+			<ul>
+				<li routerLink="/painel/base" routerLinkActive="active" >Base</li>
+				<li routerLink="/painel/locomocao" routerLinkActive="active" >Locomoção</li>
+				<li routerLink="/painel/sentido" routerLinkActive="active" >Sentidos</li>
+				<li routerLink="/painel/arma" routerLinkActive="active" >Armas</li>
+				<li routerLink="/painel/detalhes" routerLinkActive="active" >Detalhes</li>
+			</ul>
+		</nav>
+		<app-color-picker></app-color-picker>
+		<router-outlet></router-outlet>
+		<div class="acoes-finais">
+			<i class="fas fa-times" (click)="cancel()"></i>
+			<i class="fas fa-check" (click)="finish()"></i>
+		</div>
+	</div>
+</section>
